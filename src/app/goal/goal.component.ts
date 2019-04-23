@@ -9,11 +9,11 @@ import { Goal } from '../goal';
 export class GoalComponent implements OnInit {
 
   goals = [
-    new Goal(1, 'Watch Avengers: End Game', 0),
-    new Goal(2, "Sell mail stamps", 1),
-    new Goal(3, "Polish brass placements", 0),
-    new Goal(4, "Practise shooting hoops", 1),
-    new Goal(5, "Entertain the cats", 0)
+    new Goal(1, 'Watch Avengers: End Game', "Catch it at a nearby theater"),
+    new Goal(2, "Sell mail stamps", "Aim at reaching all the denizens of Sucsville"),
+    new Goal(3, "Polish brass placements", "The goal is intricate stuff"),
+    new Goal(4, "Practise shooting hoops", "Get better at it than all the neighbourhood hoodlums"),
+    new Goal(5, "Entertain the cats", "Any soul can do it, right?s")
     ]
 
   constructor() { }
