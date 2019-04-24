@@ -3,7 +3,7 @@
 <!-- <p>My goal for today is {{goals}}</p> -->
 <ul>
     <div *ngFor='let goal of goals;let i = index'>
-        <li>{{goal.name}}</li>
+        <li appStrikethrough>{{goal.name}}</li>
         <button (click)='toogleDetails(i)'>Toggle Details</button>
         <gabsie *ngIf="goal.showDescription" [goal]='goal' (isComplete)= 'completeGoal($event,i)'></gabsie>
     </div>
