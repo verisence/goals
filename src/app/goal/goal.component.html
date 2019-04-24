@@ -1,10 +1,13 @@
 <h1>My Goals</h1>
+<hr>
 <!-- <p>My goal for today is {{goals}}</p> -->
 <ul>
-    <div *ngFor='let goal of goals'>
+    <div *ngFor='let goal of goals;let i = index'>
         <li>{{goal.name}}</li>
-        <gabsie [goal]='goal'></gabsie>
+        <button (click)='toogleDetails(i)'>Toggle Details</button>
+        <gabsie *ngIf="goal.showDescription" [goal]='goal' (isComplete)= 'completeGoal($event,i)'></gabsie>
     </div>
-    <p *ngIf = 'goals.length >= 5'>You have too many goals</p>
 </ul>
+<p *ngIf = 'goals.length >= 5'>You have too many goals</p>
+
 

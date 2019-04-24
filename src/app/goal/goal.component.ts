@@ -13,9 +13,18 @@ export class GoalComponent implements OnInit {
     new Goal(2, "Sell mail stamps", "Aim at reaching all the denizens of Sucsville"),
     new Goal(3, "Polish brass placements", "The goal is intricate stuff"),
     new Goal(4, "Practise shooting hoops", "Get better at it than all the neighbourhood hoodlums"),
-    new Goal(5, "Entertain the cats", "Any soul can do it, right?s")
+    new Goal(5, "Entertain the cats", "Any soul can do it, right?")
     ]
 
+    completeGoal(isComplete, index){
+      if(isComplete){
+        this.goals.splice(index, 1);
+      }
+    }
+
+    toogleDetails(index){
+      this.goals[index].showDescription = !this.goals[index].showDescription;
+    }
   constructor() { }
 
   ngOnInit() {
