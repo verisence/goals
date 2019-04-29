@@ -1,14 +1,23 @@
 <h1>My Goals</h1>
 <hr>
 <!-- <p>My goal for today is {{goals}}</p> -->
-<ul>
-    <div *ngFor='let goal of goals;let i = index'>
-        <!-- <li appStrikethrough>{{goal.name}} due on {{goal.completeDate}}</li> --><!--this line is without the inbuilt Angular |date pipe. Interesting results-->
-        <li appStrikethrough>{{goal.name}} due in {{goal.completeDate|countdown}} days</li>
-        <button (click)='toogleDetails(i)'>Toggle Details</button>
-        <gabsie *ngIf="goal.showDescription" [goal]='goal' (isComplete)= 'completeGoal($event,i)'></gabsie>
+
+<div class="container">
+    <div class="row">
+        <app-goal-form (addGoal)="addNewGoal($event)"></app-goal-form>
     </div>
-</ul>
+    <div class="row" *ngFor="let goal of goals;let i = 'index'">
+
+        <div class="row">
+            <h4 id="{{i}}" appStrikethrough>{{goal.name}} due on {{goal.completeDate|date|uppercase}}</h4>
+            <button class = "btn btn-primary" (click)='toogleDetails(i)'>Toggle Details</button>
+        </div>        
+        
+        <div class="row" *ngIf="goal.showDescription">
+            <gabsie [goal]='goal' (isComplete) = 'deleteGoal($event, i)'></gabsie>
+        </div>
+    </div>
+</div>
 <p *ngIf = 'goals.length >= 5'>You have too many goals</p>
 
 
