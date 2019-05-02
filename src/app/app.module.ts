@@ -7,6 +7,7 @@ import { GoalDetailsComponent } from './goal-details/goal-details.component';
 import { StrikethroughDirective } from './strikethrough.directive';
 import { CountdownPipe } from './countdown.pipe';
 import { GoalFormComponent } from './goal-form/goal-form.component';
+import { AlertsService } from './alert-service/alerts.service';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,7 @@ import { GoalFormComponent } from './goal-form/goal-form.component';
     BrowserModule,
     FormsModule
   ],
-  providers: [],
+  providers: [AlertsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
